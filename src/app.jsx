@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Form from './Form';
 
 class App extends React.Component {
   render() {
-    return <div>Hello this is the app</div>;
+    return <Form
+    	title='This is the form'
+    />;
   }
 }
 
