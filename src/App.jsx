@@ -5,7 +5,7 @@ import Form from './Form';
 class App extends React.Component {
   render() {
     return <Form
-    	title='This is the form'
+      title='This is the app'
     />;
   }
 }
