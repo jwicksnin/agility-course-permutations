@@ -6,10 +6,12 @@ class Form extends React.Component {
     super(props);
     this.state = {
       count: 0,
-      obstacles: ''
+      obstacles: '',
+      permutations: null
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleObstaclesChange = this.handleObstaclesChange.bind(this);
+    this.submit = this.submit.bind(this);
   }
   handleNumberChange(e) {
     this.setState({
@@ -21,8 +23,23 @@ class Form extends React.Component {
       obstacles: e.target.value
     });
   }
+  submit(e) {
+    e.preventDefault();
+    this.getPermutations(this.state.count, this.state.obstacles);
+  }
+  getPermutations(count, obstacles) {
+    // TODO get the actual number of permutations
+    this.setState({ permutations: 22 });
+  }
   render() {
-    return <form>
+    const permutationDisplay = (
+      <div>
+        {this.state.permutations}
+      </div>
+    );
+    return <form
+        onSubmit={this.submit}
+      >
       <div>{this.props.title}</div>
       <label>Number of obstacles in the course: 
         <input 
@@ -38,6 +55,10 @@ class Form extends React.Component {
           value={this.state.obstacles}
         />
       </label>
+      <button>
+        Hello
+      </button>
+      {this.state.permutations && permutationDisplay}
     </form>;
   }
 }
