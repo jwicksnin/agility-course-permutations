@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { calculator } from '../modules/calculator';
 
 class Form extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class Form extends React.Component {
   }
   getPermutations(count, obstacles) {
     // TODO get the actual number of permutations
-    this.setState({ permutations: 22 });
+    this.setState({ permutations: calculator() });
   }
   render() {
     const permutationDisplay = (
